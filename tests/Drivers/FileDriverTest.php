@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace Sunaoka\ProcessGuard\Tests\Drivers;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use Sunaoka\ProcessGuard\Drivers\FileDriver;
 use Sunaoka\ProcessGuard\Tests\TestCase;
 
-#[CoversClass(FileDriver::class)]
+/**
+ * @coversDefaultClass FileDriver
+ */
 class FileDriverTest extends TestCase
 {
-    #[Test]
+    /**
+     * @test
+     */
     public function save(): void
     {
         $key = __METHOD__;
@@ -24,7 +26,9 @@ class FileDriverTest extends TestCase
         self::assertTrue($actual);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function save_failure(): void
     {
         $key = __METHOD__;
@@ -42,7 +46,9 @@ class FileDriverTest extends TestCase
         $driver->save($key);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function remove_exist(): void
     {
         $key = __METHOD__;
@@ -59,7 +65,9 @@ class FileDriverTest extends TestCase
         self::assertFalse($actual);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function remove_not_exist(): void
     {
         $key = __METHOD__;
@@ -71,7 +79,9 @@ class FileDriverTest extends TestCase
         self::assertFalse($actual);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function not_expired(): void
     {
         $key = __METHOD__;
@@ -82,7 +92,9 @@ class FileDriverTest extends TestCase
         self::assertFalse($actual);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function expired(): void
     {
         $key = __METHOD__;
@@ -95,7 +107,9 @@ class FileDriverTest extends TestCase
         self::assertTrue($actual);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function directory_cannot_be_created(): void
     {
         $path = '/operation/not/permitted';
@@ -106,7 +120,9 @@ class FileDriverTest extends TestCase
         new FileDriver($path);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function directory_is_not_writable(): void
     {
         $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'foo';

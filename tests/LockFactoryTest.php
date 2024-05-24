@@ -2,19 +2,21 @@
 
 declare(strict_types=1);
 
+namespace Sunaoka\ProcessGuard\Tests;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use Psr\Log\NullLogger;
 use Sunaoka\ProcessGuard\Drivers\FileDriver;
 use Sunaoka\ProcessGuard\Lock;
 use Sunaoka\ProcessGuard\LockFactory;
-use Sunaoka\ProcessGuard\Tests\TestCase;
 
-#[CoversClass(LockFactory::class)]
+/**
+ * @coversDefaultClass LockFactory
+ */
 class LockFactoryTest extends TestCase
 {
-    #[Test]
+    /**
+     * @test
+     */
     public function create(): void
     {
         $driver = new FileDriver();

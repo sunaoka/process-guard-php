@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace Sunaoka\ProcessGuard\Tests;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use Sunaoka\ProcessGuard\Drivers\FileDriver;
 use Sunaoka\ProcessGuard\Lock;
 use Sunaoka\ProcessGuard\LockFactory;
 
-#[CoversClass(Lock::class)]
+/**
+ * @coversDefaultClass Lock
+ */
 class LockTest extends TestCase
 {
-    #[Test]
+    /**
+     * @test
+     */
     public function acquire(): void
     {
         $driver = new FileDriver();
@@ -31,7 +33,9 @@ class LockTest extends TestCase
         $lock->release();
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function expired(): void
     {
         $driver = new FileDriver();

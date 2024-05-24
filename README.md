@@ -1,5 +1,13 @@
 # ProcessGuard for PHP
 
+[![Latest](https://poser.pugx.org/sunaoka/process-guard-php/v)](https://packagist.org/packages/sunaoka/process-guard-php)
+[![License](https://poser.pugx.org/sunaoka/process-guard-php/license)](https://packagist.org/packages/sunaoka/process-guard-php)
+[![PHP](https://img.shields.io/packagist/php-v/sunaoka/process-guard-php)](composer.json)
+[![Test](https://github.com/sunaoka/process-guard-php/actions/workflows/test.yml/badge.svg)](https://github.com/sunaoka/process-guard-php/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/sunaoka/process-guard-php/branch/develop/graph/badge.svg)](https://codecov.io/gh/sunaoka/process-guard-php)
+
+----
+
 This library has been designed with the intention of preventing the execution 
 of multiple instances of a script.
 

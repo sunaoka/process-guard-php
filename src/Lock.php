@@ -15,8 +15,7 @@ class Lock implements LockInterface, LoggerAwareInterface
         private DriverInterface $driver,
         private string $key,
         private ?float $ttl = null
-    ) {
-    }
+    ) {}
 
     public function acquire(): bool
     {

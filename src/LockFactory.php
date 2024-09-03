@@ -11,9 +11,7 @@ class LockFactory implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
-    public function __construct(private DriverInterface $driver)
-    {
-    }
+    public function __construct(private DriverInterface $driver) {}
 
     public function create(string $key, ?float $ttl = null): LockInterface
     {

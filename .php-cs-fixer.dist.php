@@ -8,7 +8,7 @@ $dirs = [
 ];
 
 $rules = [
-    '@PSR12' => true,
+    '@PER-CS2.0' => true,
     '@PHP80Migration' => true,
 ];
 

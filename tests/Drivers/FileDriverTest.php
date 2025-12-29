@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Sunaoka\ProcessGuard\Tests\Drivers;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sunaoka\ProcessGuard\Drivers\FileDriver;
 use Sunaoka\ProcessGuard\Tests\TestCase;
 
@@ -15,6 +16,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function save(): void
     {
         $key = __METHOD__;
@@ -29,6 +31,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function save_failure(): void
     {
         $key = __METHOD__;
@@ -49,6 +52,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function remove_exist(): void
     {
         $key = __METHOD__;
@@ -68,6 +72,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function remove_not_exist(): void
     {
         $key = __METHOD__;
@@ -82,6 +87,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function not_expired(): void
     {
         $key = __METHOD__;
@@ -95,6 +101,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function expired(): void
     {
         $key = __METHOD__;
@@ -110,6 +117,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function directory_cannot_be_created(): void
     {
         $path = '/operation/not/permitted';
@@ -123,6 +131,7 @@ class FileDriverTest extends TestCase
     /**
      * @test
      */
+    #[Test]
     public function directory_is_not_writable(): void
     {
         $path = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'foo';
